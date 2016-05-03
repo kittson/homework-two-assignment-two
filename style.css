@@ -1,10 +1,25 @@
 @charset "utf-8";
 /* CSS Document */
 
+:root {
+	--lightest-value: #FFFFFF; /** plain white **/
+	--main-accent: #D33E0A; /** main accent red orange **/
+	--second-accent: #F65A29; /** brighter red orange **/
+	--darkest-value: #212A3F; /** deepest navy **/
+	--second-color: #497A84; /** greenish big sections **/
+	--unexplained-light: #BDD2CF; /** used to be turq?  now lighter **/
+	--unexplained-gray: #5C4B2B; 
+	--almost-black: #2E2E2E;
+	/** these not used **/
+	--dk-blue-gray: #434F5B;
+	--lt-olive: #B8B739;
+	--orig-red: #FA3447;
+
+}
 
 .header
 {
-	background: #212A3F; /** navy **/
+	background: var(--darkest-value);
 	height: 60px;
 	position: fixed;
 	width: 100%;
@@ -13,7 +28,7 @@
 }
 .logo
 {
-	color: #F65A29;
+	color: var(--main-accent);
 	font-weight: 100;
 	font-size: 36px;
 	padding: 0px !important;
@@ -23,7 +38,7 @@
 }
 .logo:hover, logo:active
 {
-	color: #fff;
+	color: var(--lightest-value);
 }
 .menu{
 
@@ -32,22 +47,22 @@
 }
 .menu li a
 {
-	color: #434F5B;
+	color: var(--dk-blue-gray);
 	font-weight:500;
 	font-family: 'Poppins', sans-serif;
 	line-height: 29px;
-	background-color: #212A3F;
+	background-color: var(--darkest-value);
 	z-index:999;
 	
 }
 .menu li a:hover
 {
-	background-color: #212A3F;
-	color:#fff;
+	background-color: var(--darkest-value);
+	color: var(--lightest-value);
 }
 .menu-button
 {
-	color: #fff;
+	color: var(--lightest-value);
 	font-size: 30px;
 	margin:0px !important;
 	padding:14px;
@@ -55,7 +70,7 @@
 .backg
 {	
 	background-attachment:fixed;
-		background-color: #645862;
+		background-color: var(--unexplained-gray);
 		background-image:  url("images/bg.png");
 		background-position: top center;
 		background-repeat: no-repeat;
@@ -110,9 +125,9 @@
 {
 	font-size: 55px;
 	font-weight: 700;
-	color: #fff;
-	border-bottom: 7px double #F65A29; /**fa3447 orig**/
-	border-top: 7px double #F65A29;
+	color: var(--lightest-value);
+	border-bottom: 7px double var(--second-accent);
+	border-top: 7px double var(--second-accent);
 	line-height: 1.5;
 	font-family: 'Allura', sans-serif;
 	text-transform: none;
@@ -133,19 +148,19 @@
 {
 	font-size: 15px;
 	font-weight: 400;
-	color: #83D3C9;
+	color: var(--unexplained-light);
 }
 .text-box p span a
 {
 	text-decoration: none;
-	color: #B8B739;
+	color: var(--second-color);
 	font-size: 15px;
 }
 .text-box p a.link-button
 {
 	text-decoration: none;
-	color: #fff;
-	border: #fff solid 1px;
+	color: var(--lightest-value);
+	border: var(--lightest-value) solid 1px;
 	padding: 15px 22px;
 	margin-top: 20px;
 	line-height: 4;
@@ -161,80 +176,99 @@
 }
 .some-notes
 {
-	padding: 40px 0px;
+	padding: 40px 0px; 
 	float: left;
 }
 
-}
 .title h2
 {
-	/** font-family: 'Roboto', sans-serif; **/
-	/** font-family: 'Nothing You Could Do', sans-serif; **/
 	font-family: 'Allura', sans-serif;
 	font-weight: 400;
+	padding-top: 60px;
 	font-size: 60px;
 	text-align: center;
-	color: #B8B739;
-	/**text-transform: uppercase; **/
+	color: var(--second-color);
 }
+/**
+.title h2
+{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: 42px;
+	text-align: center;
+	color: #8AB839;
+	text-transform: uppercase;
+}
+**/
 .desc p
 {
 	width: 75%;
 	margin: 0 auto;
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
-	color: #2E2E2E;
+	color: var(--almost-black);
 	font-size: 16px;
 	text-align: center;
 	line-height: 25px;
+	padding-bottom: 40px;
 	
 }
 .desc p a
 {
 	text-decoration: none;
-	color: #B8B739;
+	color: var(--second-color);
 }
 .features
 {
-	background: #929130;
+	background: var(--second-color);
 	padding: 20px 0px; 
 }
 .features-text
 {
-	font-family: 'Poppins', sans-serif;
+	/** font-family: 'Poppins', sans-serif; **/
+	font-family: 'Allura', sans-serif;
+	font-size: 45px;
 	font-weight: 700;
 	letter-spacing: 5px;
-	margin-bottom:20px;
-	margin-top:20px;
+	/** margin-bottom:20px;
+	margin-top:20px; **/
 }
 h2.features-text::after {
     display: block;
-    margin: 20px auto 0px;
+    margin: 10px auto 0px;
     width: 80px;
     height: 1px;
-    background: #FFF none repeat scroll 0% 0%;
+    background: var(--lightest-value) none repeat scroll 0% 0%;
     content: "";
 }
 
-.iconing
+.iconing /** for social media links **/
 {
 	text-align: center;
 	width:80px;
-	margin:0 auto;
-	
+	margin:0 auto;		
 }
 .iconing i
 {
 	font-size: 35px;
 	text-align: center;
-	color: #fff;
-	border: 1px solid #fff;
+	color: var(--lightest-value);
+	border: 1px solid var(--lightest-value);
 	display: block;
 	border-radius: 50%;
 	background: rgba(255, 255, 255, 0.1);
 	width: 80px;
 	height: 80px;
 	line-height: 80px;
+}
+.iconing i:hover
+{	
+	color: var(lightest-value);
+	background-color: var(--unexplained-gray );
+	
+}
+.nounderline {
+	text-decoration: none !important;
 }
 .icon-box
 {
@@ -246,9 +280,8 @@ h2.features-text::after {
 }
 .icon-text-box h4
 {
-
-	font-family: 'Roboto', sans-serif;
-	color: #2e2e2e;
+	font-family: 'Poppins', sans-serif;
+	color: var(--almost-black);
 	font-weight: 400;
 	font-size: 25px;
 
@@ -258,13 +291,13 @@ h2.features-text::after {
 	font-family: 'Poppins', sans-serif;
 	font-weight: 400;
 	font-size: 15px;
-	color: #2E2E2E;
+	color: var(--almost-black);
 }
 .notes
 {
 		background-attachment:fixed;
-		background-color: #645862;
-		background-image:  url("images/notes-bg.jpg");
+		/** background-color: var(--unexplained-light); **/
+		background-image:  url("images/bg-notes.png");
 		background-position: top center;
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -276,7 +309,7 @@ h2.features-text::after {
 }
 .notes-bg
 {
-	background: rgba(33, 42, 63, 0.9);
+	/** background: rgba(33, 42, 63, 0.9); **/
 	padding: 80px 0px;
 }
 .notes-bg p
@@ -289,9 +322,9 @@ h2.features-text::after {
 }
 .btneff
 {
-background-color: #B8B739;
+background-color: var(--second-color); 
 border: none;
-color: #fff;
+color: var(--lightest-value);
 padding: 13px 0px;
 width: 100% !important;
 font-size: 17px;
@@ -301,7 +334,9 @@ font-size: 17px;
 }
 .portfolio-text
 {
-	font-family: 'Roboto', sans-serif;
+	/** font-family: 'Roboto', sans-serif; **/
+	font-family: 'Allura', sans-serif;
+	font-size: 55px;
 	font-weight: 700;
 	letter-spacing: 5px;
 	margin-bottom:30px;
@@ -312,7 +347,7 @@ h2.portfolio-text::after {
     margin: 17px auto 0px;
     width: 80px;
     height: 1px;
-    background: #B8B739 none repeat scroll 0% 0%;
+    background: var(--second-color) none repeat scroll 0% 0%;
     content: "";
 }
 .work-list a .featured-img
@@ -352,7 +387,7 @@ h2.portfolio-text::after {
 }
 .image-hover:hover i
 {	display: block;
-	color: #212A3F;
+	color: var(--darkest-value);
 }
 .work-list a h3 {
     text-align: center;
@@ -361,10 +396,10 @@ h2.portfolio-text::after {
     float: left;
     width: 100%;
     font-weight: 600;
-	background: #B8B739; /** #8ab839; that green **/
-	color:#fff;
+	background: var(--second-color);
+	color: var(--lightest-value);
 	margin:0px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
 .work-list a:hover .image-hover
 {
@@ -379,16 +414,16 @@ h2.portfolio-text::after {
 
 .active
 {
-	color:#fff !important;
+	color: var(--lightest-value) !important;
 }
 .nav li a:focus
 {
-	background: #212A3F;
-	color: #fff;
+	background: var(--darkest-value);
+	color: var(--lightest-value);
 }
 .nav li a:active
 {
-	color: #fff;
+	color: var(--lightest-value);
 }
 .countbg
 {
@@ -411,15 +446,15 @@ h2.portfolio-text::after {
 }
 .counter-item i
 {
-	font-size: 40px;
-	color: #B8B739;
+	font-size: 40px;	
+	color: var(--second-color);
 }
 .timer
 {
 	margin-top: 5px;
 	font-weight: 700;
 	font-size: 50px;
-	color: #B8B739;
+	color: var(--second-color);
 }
 .counter-item h5
 {
@@ -427,7 +462,7 @@ h2.portfolio-text::after {
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
 .contact
 {
@@ -443,9 +478,8 @@ h2.portfolio-text::after {
 {
 
     padding: 12px 12px;
-    color: #555;
     background-color: rgba(33, 42, 63, 0.2);
-    color: #212A3F;
+    color: var(--darkest-value);
     height: auto !important;
     margin-bottom: 30px;
     font-family: 'Poppins', sans-serif;
@@ -456,9 +490,9 @@ h2.portfolio-text::after {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(33, 42, 63, 0.1);
 }
 .btn-sub {
-    color: #fff;
-    background-color: #B8B739;
-    border-color: #fff;
+    color: var(--lightest-value);
+    background-color: var(--second-color);
+    border-color: var(--lightest-value);
     font-size: 18px;
     padding: 10px 30px;
 }
@@ -467,12 +501,12 @@ h2.portfolio-text::after {
 	height: 150px;
 }
 input[placeholder], [placeholder], *[placeholder] {
-    color: #212A3F !important;
+    color: var(--darkest-value) !important;
 }
 .address p i {
     padding-right: 10px;
     font-size: 15px;
-    color: #B8B739;
+    color: var(--second-color);
 }
 .footer {
     margin: 20px 0px 10px;
@@ -486,7 +520,7 @@ input[placeholder], [placeholder], *[placeholder] {
 	font-family: 'Poppins', sans-serif;
 }
 .footer p a {
- color: #B8B739;
+ color: var(--second-color);
  font-family: 'Poppins', sans-serif;
 }
 
@@ -516,8 +550,7 @@ input[placeholder], [placeholder], *[placeholder] {
  
     text-align: center;}
 
-    .btneff {
-   
+    .btneff {   
     margin-top: 15px;
     width: 20% !important;
 }
@@ -535,8 +568,7 @@ input[placeholder], [placeholder], *[placeholder] {
     .text-box p a.link-button {
     padding: 8px 14px;
     font-size: 13px;}
-    .title h2 {
-   
+    .title h2 {   
     font-size: 29px;}
     .desc p {
     font-size: 15px;
@@ -544,12 +576,10 @@ input[placeholder], [placeholder], *[placeholder] {
     .icon-text-box h4 {
     text-align: center;
 }
-.icon-text-box p {
- 
+.icon-text-box p { 
     text-align: center;}
 
-    .btneff {
-   
+    .btneff {   
     margin-top: 15px;
     width: 80% !important;
 }
